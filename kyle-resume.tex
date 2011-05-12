@@ -1,0 +1,254 @@
+%%% A template to produce a nice-looking Curriculum Vitae.
+%%% Original by Kieran Healy <kjhealy@gmail.com>
+%%% Modified by Kyle Mathews <mathews.kyle@gmail.com>
+%%%
+%%% ------------------------------------------------------------------------
+%%% Requirements (should be included in a modern tex distribution):
+%%% ------------------------------------------------------------------------
+%%% xelatex
+%%% fontspec.sty
+%%% hyperrref.sty
+%%% xunicode.sty
+%%% color.sty
+%%% url.sty
+%%% fancyhdr.sty
+%%%
+%%% ------------------------------------------------------------------------
+%%% Optional
+%%% ------------------------------------------------------------------------
+%%% git
+%%% vc.sty
+%%% revnum.sty
+%%% Fonts
+%%%
+%%% ------------------------------------------------------------------------
+%%% Note
+%%%------------------------------------------------------------------------
+%%% Because this is a hand-tweaked file, be on the look out for \medksip, 
+%%% \bigskip and \newpage commands here and there, which are used to balance
+%%% the layout or avoid widows & orphans, etc. You should of course add or 
+%%% remove these as needed.
+%%%------------------------------------------------------------------------
+
+\documentclass[11pt]{article}
+
+%%%------------------------------------------------------------------------
+%%% Metadata
+%%%------------------------------------------------------------------------
+
+%% Change as needed. Or just add me as a coauthor. Only some of these are 
+%% used below in the hyperref declaration and address banner section.
+\def\myauthor{Kyle Mathews}
+\def\mytitle{Resume}
+\def\mycopyright{\myauthor}
+\def\mykeywords{}
+\def\mybibliostyle{plain}
+\def\mybibliocommand{}
+\def\mysubtitle{}
+\def\myaffiliation{Freelance Web Developer}
+\def\myaddress{38 Shorebreeze Ct East Palo Alto, California 94303}
+\def\myemail{mathews.kyle@gmail.com}
+\def\myweb{http://kyle.mathews2000.com}
+\def\myphone{(801) 709-0238}
+\def\myversion{}
+\def\myrevision{}
+
+
+\def\myaffiliation{Freelance Web Developer}
+\def\myauthor{Kyle Mathews}
+\date{} % not used (revision control instead)
+\def\mykeywords{Kyle, Mathews, Kyle Mathews, Vita, CV, Resume, Drupal, Web development, social software}
+
+%%%------------------------------------------------------------------------  
+%%% Git version tracking 
+%%%------------------------------------------------------------------------
+
+%% If you don't use git or the vc package (from CTAN), comment this out.
+%% If you comment it out, be sure to remove the \rfoot comment below, too.
+%\input{vc}
+
+%%%------------------------------------------------------------------------
+%%% Required style files
+%%%------------------------------------------------------------------------
+\usepackage{url,fancyhdr}
+%%\usepackage{revnum} % for reverse-numbered publications (revnumerate environment) if needed.
+
+%% needed for xelatex to work
+\usepackage{fontspec}
+\usepackage{xunicode}
+
+%% color for the links 
+\usepackage[usenames,dvipsnames]{color}
+
+%% hyperlinks
+\usepackage[xetex, 
+	colorlinks=true,
+	urlcolor=BlueViolet,
+	plainpages=false,
+  	pdfpagelabels,
+  	bookmarksnumbered,
+  	pdftitle={\mytitle},
+  	pagebackref,
+  	pdfauthor={\myauthor},
+  	pdfkeywords={\mykeywords}
+  	]{hyperref}
+
+%%%------------------------------------------------------------------------
+%%% Document
+%%%------------------------------------------------------------------------
+\begin{document}
+
+%% Choose fonts for use with xelatex
+\setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Minion Pro} 
+\setsansfont[Mapping=tex-text,Colour=AA0000]{Myriad Pro}
+\setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata} 
+
+
+%%%------------------------------------------------------------------------
+%%% Local commands
+%%%------------------------------------------------------------------------
+
+%% Marginal header
+%% Note: as the document goes on you may need to introduce a (gradually increasing)
+%% \vspace element to keep the marginal header pleasingly aligned with the first 
+%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
+%% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
+\newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
+
+
+%% custom ampersand (font consistent with the one chosen above)
+\newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro Medium}\selectfont\&\,}}
+
+%% No bullets on labels
+%\renewcommand{\labelitemi}{~} 
+
+%% Custom hanging indent for vita items
+\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+%\def\ind{\hangindent=18pt\hangafter=1 \noindent}
+\def\labelitemi{~}
+\renewcommand{\labelitemii}{~}
+
+%%%------------------------------------------------------------------------
+%%% Page layout
+%%%------------------------------------------------------------------------
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot{}
+\rhead{{\scriptsize\thepage}}
+
+%% git revision control footer 
+%\rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
+
+%%%------------------------------------------------------------------------
+%%% Address and contact block
+%%%------------------------------------------------------------------------
+\begin{minipage}[t]{2.95in}
+ \flushright {\footnotesize 38 Shorebreeze Ct \\ \vspace{-0.05in} East Palo Alto, \textsc{ca} 94303}  
+  
+\end{minipage}
+\hfill     
+%\begin{minipage}[t]{0.0in}
+% dummy (needed here)
+%\end{minipage}
+\hfill
+\begin{minipage}[t]{1.7in}
+  \flushright \footnotesize Phone: \myphone \\ 
+  {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}}} \\
+  {\scriptsize  \texttt{\href{\myweb}{\myweb}}}
+\end{minipage}
+
+
+\medskip
+
+%% Name 
+\noindent{\Large {\textsc{Kyle Mathews}}}
+\reversemarginpar
+
+\medskip       
+
+%% Summary
+\medskip
+\marginhead{{\vskip -0.2em}Summary}
+
+\noindent Passionate about finding elegant solutions to difficult problems. Experienced entrepreneur, Drupal developer, and UX designer. Creative, a risk taker, strong writer and communicator, experienced at public speaking.
+
+\medskip
+
+\ind Kyle is a serial entreprenur who has helped found four companies.
+
+\bigskip
+
+%% Education
+
+\marginhead{{\vskip -0.4em}Education}
+
+\noindent\emph{Brigham Young University \vspace{0.15in}}
+
+\ind 2009. M.S., Information Systems.
+
+\ind 2009. B.S., Information Systems.
+
+\bigskip
+ 
+%% Experience
+\marginhead{{\vskip 0.2em}Experience}
+\medskip
+
+\noindent{\emph{\href{http://muirwebs.com}{MuirWebs} \hfill February 2011 -- current} \vspace{0.15in}}
+
+\noindent MuirWebs is an early stage startup that I am helping to architect and build a Drupal platform that improves the ways companies work with their partner ecosystem. The Drupal platform is built using advanced Drupal tools such as Features, Context, Views, a custom extensible theme, and a number of custom modules.
+
+\bigskip
+
+\noindent{\emph{University online learning community \hfill March 2008 -- current} \vspace{0.15in}}
+
+\noindent While a student at Brigham Young University, I built an online community learning website to enable better collaboration between students and professors in and outside of the classroom. Over 1000 students, alumni, and professors use Island. The site is built using Drupal and makes heavy use of the modules Organic Groups, Spaces, and Context. An example group on the site: \href{https://island.byu.edu/drupal}{island.byu.edu/drupal}
+
+\bigskip
+
+\noindent{\emph{Founder of \href{http://eduglu.com}{Eduglu} \hfill January 2009 -- March 2011} \vspace{0.15in}}
+
+\noindent Eduglu is a company I started to productize and commercialize the work I was doing with Island. The goal was to provide organizations with elegant social learning software that helps groups learn together. Eduglu, the product, was downloaded over 600 times and has been successfully deployed at a number of different institutions.
+
+\bigskip
+
+\ind{\emph{Google Summer of Code \hfill Summer 2008\vspace{0.15in}}}
+
+\noindent\href{http://code.google.com/soc/}{Google Summer of Code} is a global program that offers student developers stipends to write code for various open source software projects. I worked summer 2008 with the open source software project \href{http://drupal.org}{Drupal} writing a Drupal module called \href{http://drupal.org/project/memetracker}{Memetracker}. This module let's you set up an automated online news site, similar to Google News. See \href{http://www.talkedup.com/chicago}{talkedup.com/chicago} for an example of a site using Memetracker.
+
+\bigskip
+
+
+
+%% Skills
+\marginhead{{\vskip 0.6em}Skills}
+\medskip
+
+\noindent\emph{Drupal \vspace{0.15in}}
+
+\noindent I have extensive experience building complex bespoke Drupal websites. I'm familiar with all major (and many minor) Drupal site-building modules and have written dozens of custom modules.
+
+\bigskip
+
+\noindent \emph{I maintain a number of modules on drupal.org.}
+
+\begin{description}
+  \item[\href{http://drupal.org/project/og_mailinglist}{OG Mailinglist}] Integrates the functionality of an email list and forum in a Drupal site.
+  \item[\href{http://drupal.org/project/memetracker}{Memetracker}] Enables you to create an automated online news site.
+  \item[\href{http://drupal.org/project/mixpanel}{Mixpanel}] Integrates Drupal with the event analytics company Mixpanel.
+  \item[\href{http://drupal.org/project/family_history}{Family History Distro}] A Drupal distro to simplify the process of collecting and displaying stories, letters, documents, and pictures about your family, past and present.
+\end{description}
+
+\medskip
+
+\noindent\emph{Other technologies}
+
+\begin{description}
+  \item[Front end] HTML5, CSS3, SASS, Compass, jQuery, Javascript/Coffeescript, AJAX
+  \item[Linux] I use Linux as my development computer and have extensive experience administering Linux servers.
+  \item[Programming languages] PHP, Python, Java, Bash, Javascript/Coffescript, some Ruby
+\end{description}
+
+
+\end{document}
