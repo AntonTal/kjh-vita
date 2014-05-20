@@ -24,9 +24,9 @@
 %%% ------------------------------------------------------------------------
 %%% Note
 %%%------------------------------------------------------------------------
-%%% Because this is a hand-tweaked file, be on the look out for \medksip, 
+%%% Because this is a hand-tweaked file, be on the look out for \medksip,
 %%% \bigskip and \newpage commands here and there, which are used to balance
-%%% the layout or avoid widows & orphans, etc. You should of course add or 
+%%% the layout or avoid widows & orphans, etc. You should of course add or
 %%% remove these as needed.
 %%%------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@
 %%% Metadata
 %%%------------------------------------------------------------------------
 
-%% Change as needed. Or just add me as a coauthor. Only some of these are 
+%% Change as needed. Or just add me as a coauthor. Only some of these are
 %% used below in the hyperref declaration and address banner section.
 \def\myauthor{Kyle Mathews}
 \def\mytitle{Resume}
@@ -46,9 +46,9 @@
 \def\mybibliocommand{}
 \def\mysubtitle{}
 \def\myaffiliation{Freelance Web Developer}
-\def\myaddress{38 Shorebreeze Ct East Palo Alto, California 94303}
+\def\myaddress{1134 Irving St. San Francisco CA, 94122}
 \def\myemail{mathews.kyle@gmail.com}
-\def\myweb{http://kyle.mathews2000.com}
+\def\myweb{http://bricolage.io}
 \def\myphone{(801) 709-0238}
 \def\myversion{}
 \def\myrevision{}
@@ -57,10 +57,10 @@
 \def\myaffiliation{Freelance Web Developer}
 \def\myauthor{Kyle Mathews}
 \date{} % not used (revision control instead)
-\def\mykeywords{Kyle, Mathews, Kyle Mathews, Vita, CV, Resume, Drupal, Web development, social software}
+\def\mykeywords{Kyle, Mathews, Kyle Mathews, Vita, CV, Resume, Backbone, React.js, Coffeescript, Javascript, Product Development, UI/UX design,  Web development, social software}
 
-%%%------------------------------------------------------------------------  
-%%% Git version tracking 
+%%%------------------------------------------------------------------------
+%%% Git version tracking
 %%%------------------------------------------------------------------------
 
 %% If you don't use git or the vc package (from CTAN), comment this out.
@@ -77,11 +77,11 @@
 \usepackage{fontspec}
 \usepackage{xunicode}
 
-%% color for the links 
+%% color for the links
 \usepackage[usenames,dvipsnames]{color}
 
 %% hyperlinks
-\usepackage[xetex, 
+\usepackage[xetex,
 	colorlinks=true,
 	urlcolor=BlueViolet,
 	plainpages=false,
@@ -93,15 +93,25 @@
   	pdfkeywords={\mykeywords}
   	]{hyperref}
 
+%http://tex.stackexchange.com/a/136050
+% Make line spacing around lists consistent.
+\usepackage{parskip}
+\newenvironment{mydescription}
+{ \begin{description}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{description}                  }
+
 %%%------------------------------------------------------------------------
 %%% Document
 %%%------------------------------------------------------------------------
 \begin{document}
 
 %% Choose fonts for use with xelatex
-\setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Minion Pro} 
+\setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Minion Pro}
 \setsansfont[Mapping=tex-text,Colour=AA0000]{Myriad Pro}
-\setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata} 
+\setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata}
 
 
 %%%------------------------------------------------------------------------
@@ -110,17 +120,13 @@
 
 %% Marginal header
 %% Note: as the document goes on you may need to introduce a (gradually increasing)
-%% \vspace element to keep the marginal header pleasingly aligned with the first 
-%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
+%% \vspace element to keep the marginal header pleasingly aligned with the first
+%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or
 %% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
 \newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
 
-
 %% custom ampersand (font consistent with the one chosen above)
 \newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro Medium}\selectfont\&\,}}
-
-%% No bullets on labels
-%\renewcommand{\labelitemi}{~} 
 
 %% Custom hanging indent for vita items
 \def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
@@ -137,23 +143,23 @@
 \fancyfoot{}
 \rhead{{\scriptsize\thepage}}
 
-%% git revision control footer 
+%% git revision control footer
 %\rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
 
 %%%------------------------------------------------------------------------
 %%% Address and contact block
 %%%------------------------------------------------------------------------
 \begin{minipage}[t]{2.95in}
- \flushright {\footnotesize 757 Stern Ave. \\ \vspace{-0.05in} Palo Alto, \textsc{ca} 94303}  
-  
+ \flushright {\footnotesize 1134 Irving Street \\ \vspace{-0.05in} San Francisco, \textsc{CA} 94122}
+
 \end{minipage}
-\hfill     
+\hfill
 %\begin{minipage}[t]{0.0in}
 % dummy (needed here)
 %\end{minipage}
 \hfill
 \begin{minipage}[t]{1.7in}
-  \flushright \footnotesize Phone: \myphone \\ 
+  \flushright \footnotesize Phone: \myphone \\
   {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}}} \\
   {\scriptsize  \texttt{\href{\myweb}{\myweb}}}
 \end{minipage}
@@ -161,17 +167,17 @@
 
 \medskip
 
-%% Name 
+%% Name
 \noindent{\Large {\textsc{Kyle Mathews}}}
 \reversemarginpar
 
-\medskip       
+\medskip
 
 %% Summary
 \medskip
 \marginhead{{\vskip -0.2em}Summary}
 
-\noindent An elite web developer with a deep knowledge of open source software development, the education space, and social software.
+\noindent Experienced web developer/designer with a deep knowledge of open source software development, education, and social software.
 
 \medskip
 
@@ -190,26 +196,26 @@
 \ind 2009. B.S., Information Systems.
 
 \bigskip
- 
+
 %% Experience
 \marginhead{{\vskip 0.3em}Experience}
 \medskip
 
-\noindent{\emph{Stealth Web Sports Trivia Game Startup \hfill July 2011 -- current} \vspace{0.15in}}
+\noindent{\emph{Senior Frontend Engineer and Product Manager at \href{http://getpantheon.com}{Pantheon} \hfill December 2011 -- April 2014} \vspace{0.15in}}
 
-\noindent I've been helping a local startup build a realtime sports trivia game designed to be embedded on sports forum and news sites. Our stack includes Node.js, Coffeescript, Now.js, Eco, Stylus, Stich, Backbone.js, Stich, and jQuery. As one of two programmers, I've been an integral part in designing and developing the game.
+\noindent Highlights of my time at Pantheon include:
+
+\begin{itemize}
+  \item[--] \href{https://www.getpantheon.com/news/apollo-launched}{Rebuilding the Pantheon dashboard from the ground up as a real-time single-page-app using Backbone.js and SockJS.}
+  \item[--] \href{http://techcrunch.com/2013/07/10/pantheon-multidev/}{Designing and building Multidev — cloud development environments for teams. Basically Git for the entire stack (files, DB, and code) not just code. It’s been a huge hit for customers with larger teams of developers.}
+  \item[--] \href{https://www.getpantheon.com/pantheon-one}{Designing and building Pantheon One — a suite of tools for customers administering 100s to 1000s of websites.}
+\end{itemize}
 
 \bigskip
 
-\noindent{\emph{1st Technical Hire at \href{http://muirwebs.com}{MuirWebs} \hfill February 2011 -- current} \vspace{0.15in}}
+\noindent{\emph{Founder at \href{http://eduglu.com}{Eduglu} \hfill January 2009 -- March 2011} \vspace{0.15in}}
 
-\noindent MuirWebs is an early stage startup I'm working with. I'm architecting and building a Drupal SaaS product.. I’ve setup an automated build system and am integrating automated testing using Jenkins. I’m designing and building a custom analytics solution. The Drupal product is built using advanced Drupal tools such as Features, Context, Views, a custom extensible theme based on HTML5 and CSS3, and a number of custom modules.
-
-\bigskip
-
-\noindent{\emph{Founder of \href{http://eduglu.com}{Eduglu} \hfill January 2009 -- March 2011} \vspace{0.15in}}
-
-\noindent I founded Eduglu to productize the social learning technology work I was doing with Island. Eduglu was one of the first Drupal products to be released. Eduglu was downloaded over 600 times and has been successfully deployed at a number of different institutions including Brigham Young University and Georgia State University.
+\noindent I founded Eduglu to productize social learning research I did while in college. Eduglu was one of the first Drupal products to be released. Eduglu was downloaded over 600 times and has been successfully deployed at a number of different institutions including Brigham Young University and Georgia State University.
 
 \newpage
 
@@ -217,28 +223,23 @@
 \marginhead{{\vskip 0.2em}Skills}
 \medskip
 
-\noindent\emph{Drupal \vspace{0.15in}}
-
-\noindent I have extensive experience building sophisticated custom Drupal websites. I'm familiar with all major (and many minor) Drupal site-building modules and have written dozens of custom modules including a module to generate custom notification emails for \href{http://www.symantec.com/connect/}{Symantec Connect}, a module to capture and store sales leads, and a module that enforces business rules for creating reviews on an online marketplace.
-
-\bigskip
-
-\noindent \emph{I maintain a number of modules on drupal.org.}
-
-\begin{description}
-  \item[\href{http://drupal.org/project/og_mailinglist}{OG Mailinglist}] Many people prefer to participate online via email then through forums. This module integrates the functionality of an email list and forum within a Drupal site so people people can start and comment on discussions on a website through email.
-  \item[\href{http://drupal.org/project/memetracker}{Memetracker}] Enables you to create an entirely automated online news site on any subject.
-  \item[\href{http://drupal.org/project/mixpanel}{Mixpanel}] Many Drupal sites need custom analytics. This module helps by integrating Drupal with the analytics company Mixpanel.
-\end{description}
+\noindent\emph{Product Management}
 
 \medskip
 
-\noindent\emph{Other technologies}
+\noindent I led product management at Pantheon for all customer facing features. My bible is \emph{\href{http://www.amazon.com/The-Principles-Product-Development-Flow/dp/1935401009/}{The Principles of Product Development Flow: Second Generation Lean Product Development}}.
 
-\begin{description}
-  \item[Front end] HTML5, CSS3, SASS, Compass, jQuery, Javascript/CoffeeScript, Backbone.js
-  \item[Programming languages] PHP, Python, Java, Bash, Javascript/CoffeeScript, Node.js
-\end{description}
+\bigskip
+\medskip
+
+\noindent\emph{Technologies}
+
+\medskip
+
+\begin{mydescription}
+  \item[Front end] HTML5, CSS3, SASS, Compass, jQuery, Javascript/CoffeeScript, Backbone.js, React.js
+  \item[Programming languages] Node.js, Python, Java, Ruby, Bash, Javascript/CoffeeScript, PHP
+\end{mydescription}
 
 \bigskip
 
@@ -248,11 +249,13 @@
 
 \noindent I have presented at a number of international education and technology conferences as well as many smaller conferences and meetups including:
 
-\begin{description}
+\medskip
+
+\begin{mydescription}
   \item[\href{http://www.archive.org/details/DrupalconDc2009-BuildingAdvancedSocialNetworksAtALargeU.s.University}{``Building Advanced Social Networks at a Large U.S. University"}] Drupalcon DC 2009
   \item[\href{http://ttix.org/archives/2010-sessions/introducing-eduglu-a-new-drupal-distribution-for-higher-education/}{``Introducing Eduglu, a new Drupal distribution for Higher Education"}] Teaching With Technology Idea Exchange 2010
   \item[\href{http://www.ignitesaltlake.com/ignite/index.cfm/videos/ignite-salt-lake-2/}{``Building Social Networks for Learning"}] Ignite Salt Lake City 2009
-\end{description}
+\end{mydescription}
 
 
 \end{document}
